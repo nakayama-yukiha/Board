@@ -1,0 +1,49 @@
+body {
+	background: #afeeee;
+}
+
+.errorMessages {
+	background: #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	color: red;
+	max-width: 300px;
+}
+
+a.new {
+
+	text-decoration: none;
+	background-color:#ddeeff;
+    border:1px solid #8888ff;
+    padding:1px 8px;
+    border-radius:5px;
+    box-shadow:0px 0px 10px #c3e1ff;
+    cursor:pointer;
+}
+
+a.home {
+
+	text-decoration: none;
+	background-color:#ddeeff;
+    border:1px solid #8888ff;
+    padding:1px 8px;
+    border-radius:5px;
+    box-shadow:0px 0px 10px #c3e1ff;
+    cursor:pointer;
+}
+
+
+table {
+	table-layout: fixed;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table th {
+	background: #fffacd;
+}
+
+table td {
+	background: rgba(225,225,225,1);
+}

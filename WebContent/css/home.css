@@ -1,0 +1,104 @@
+body {
+  /* 画像ファイルの指定 */
+  background-image: url(../pict/unkai.gif);
+
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+}
+
+.utilty {
+	text-align: right;
+}
+
+h1 {
+	color: #FFFFFF;
+}
+
+a.kanri {
+	text-decoration: none;
+	background-color:#ddeeff;
+    border:1px solid #8888ff;
+    padding:1px 8px;
+    border-radius:5px;
+    box-shadow:0px 0px 10px #c3e1ff;
+    cursor:pointer;
+}
+
+.errorMessages {
+	background: rgba(225,225,225,0.8);
+	text-align: center;
+	color: red;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 300px;
+}
+
+.filterArea {
+	margin: 3em auto;
+ 	padding: 0 1em;
+ 	max-width: 1000px;
+	text-align: center;
+}
+
+
+
+a.newtext {
+	margin-left: 100px;
+	text-decoration: none;
+	background-color:#ddeeff;
+    border:1px solid #8888ff;
+    padding:1px 8px;
+    border-radius:5px;
+    box-shadow:0px 0px 10px #c3e1ff;
+    cursor:pointer;
+}
+
+.main-contents {
+  margin: 1em auto;
+  padding: 0 1em;
+  max-width: 1000px;
+  text-align: center !important;
+}
+
+table.type01 {
+    border-collapse: collapse;
+    text-align: left;
+   line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+
+table.type01 td {
+	background: rgba(255,255,221,0.7);;;
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+}
+
+table.type01 .even {
+    background: rgba(134,248,214,0.7);;
+}
+
+
+pre {
+
+  width: auto;
+  _width: 90%;
+  overflow: auto;
+  _overflow: scroll;
+  color: #000;
+  font-family: 'Meiryo UI', 和文フォント;
+}

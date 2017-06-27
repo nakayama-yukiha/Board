@@ -1,0 +1,39 @@
+body {
+  /* 画像ファイルの指定 */
+  background-image: url(../pict/sakyu.gif);
+
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+}
+
+.main-contents {
+	background: rgba(120,224,159,0.5);
+  margin: 3em auto;
+  padding: 0 1em;
+  max-width: 600px;
+  text-align: center !important;
+}
+
+h3 {
+	color: #FFFFFF;
+}
+
+.errorMessages {
+	background: #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	color: red;
+	max-width: 300px;
+}
