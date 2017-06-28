@@ -34,5 +34,47 @@ public class BranchService {
 		}
 	}
 
+	public void register(Branches branch) {
+		//投稿したメッセージをdao通してDBに格納する
+		Connection connection = null;
+		try {
+			connection = getConnection();
+
+			BranchDao branchDao = new BranchDao();
+			branchDao.insert(connection, branch);
+
+			commit(connection);
+		} catch (RuntimeException e) {
+			rollback(connection);
+			throw e;
+		} catch (Error e) {
+			rollback(connection);
+			throw e;
+		} finally {
+			close(connection);
+		}
+	}
+
+	public void branchDelete(String branchId) {
+
+		Connection connection = null;
+		try {
+			connection = getConnection();
+
+
+			BranchDao branchDao = new BranchDao();
+			branchDao.branchDelete(connection, branchId);
+
+		commit(connection);
+		} catch (RuntimeException e) {
+			rollback(connection);
+			throw e;
+		} catch (Error e) {
+			rollback(connection);
+			throw e;
+		} finally {
+			close(connection);
+		}
+	}
 }
 

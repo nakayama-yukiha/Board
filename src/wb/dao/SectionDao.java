@@ -57,6 +57,47 @@ public class SectionDao {
 		}
 	}
 
+	public void insert(Connection connection, Sections section) {
+
+		PreparedStatement ps = null;
+		try {
+			StringBuilder sql = new StringBuilder();
+			sql.append("INSERT INTO sections ( ");
+			sql.append(" name");
+			sql.append(") VALUES (");
+			sql.append(" ?"); // name
+			sql.append(")");
+
+			ps = connection.prepareStatement(sql.toString());
+
+			ps.setString(1, section.getName());
+
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new SQLRuntimeException(e);
+		} finally {
+			close(ps);
+		}
+	}
+
+	public void sectionDelete(Connection connection, String SectionId) {
+
+		PreparedStatement ps = null;
+		try {
+			String sql = "DELETE FROM sections WHERE id = ?";
+
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, SectionId);
+
+
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new SQLRuntimeException(e);
+		} finally {
+			close(ps);
+		}
+
+	}
 
 }
 

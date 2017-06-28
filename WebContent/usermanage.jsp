@@ -27,6 +27,7 @@ function check(str){
 <body>
 
 <div class="usermenu" align="right">
+<a href="add" class="add">テスト</a>
 <a href="newuser" class="new">ユーザー新規登録</a>
 <a href="./" class="home">ホーム画面</a>
 </div>

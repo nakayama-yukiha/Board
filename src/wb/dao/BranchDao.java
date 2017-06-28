@@ -57,5 +57,47 @@ public class BranchDao {
 		}
 	}
 
+	public void insert(Connection connection, Branches branch) {
+
+		PreparedStatement ps = null;
+		try {
+			StringBuilder sql = new StringBuilder();
+			sql.append("INSERT INTO branches ( ");
+			sql.append(" name");
+			sql.append(") VALUES (");
+			sql.append(" ?"); // name
+			sql.append(")");
+
+			ps = connection.prepareStatement(sql.toString());
+
+			ps.setString(1, branch.getName());
+
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new SQLRuntimeException(e);
+		} finally {
+			close(ps);
+		}
+	}
+
+	public void branchDelete(Connection connection, String BranchId) {
+
+		PreparedStatement ps = null;
+		try {
+			String sql = "DELETE FROM branches WHERE id = ?";
+
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, BranchId);
+
+
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new SQLRuntimeException(e);
+		} finally {
+			close(ps);
+		}
+
+	}
+
 
 }

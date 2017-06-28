@@ -34,5 +34,51 @@ public class SectionService {
 		}
 	}
 
+	public void register(Sections section) {
+		//投稿したメッセージをdao通してDBに格納する
+		Connection connection = null;
+		try {
+			connection = getConnection();
+
+			SectionDao sectionDao = new SectionDao();
+			sectionDao.insert(connection, section);
+
+			commit(connection);
+		} catch (RuntimeException e) {
+			rollback(connection);
+			throw e;
+		} catch (Error e) {
+			rollback(connection);
+			throw e;
+		} finally {
+			close(connection);
+		}
+	}
+
+	public void sectionDelete(String sectionId) {
+
+		Connection connection = null;
+		try {
+			connection = getConnection();
+
+
+			SectionDao sectionDao = new SectionDao();
+			sectionDao.sectionDelete(connection, sectionId);
+
+		commit(connection);
+		} catch (RuntimeException e) {
+			rollback(connection);
+			throw e;
+		} catch (Error e) {
+			rollback(connection);
+			throw e;
+		} finally {
+			close(connection);
+		}
+	}
+
+
+
+
 }
 
